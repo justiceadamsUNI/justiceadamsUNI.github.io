@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<!-- Keep in mind 'Tales' references bootstrap LESS classes previously developed . Last edit 6/11. Cleaning code-->
+
+
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!-- Keep in mind 'Tales' references bootstrap LESS classes previously developed . Last edit 6/3. Working on breadcrumb-->
+
+<head>
+    <meta charset="utf-8">
+    <title>Cornerstone 2k16 - Resources Page</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <!-- Bootstrap styles -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-theme.min.css">
+
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+
+    <!-- Google Webfonts -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600%7CPT+Serif:400,400italic' rel='stylesheet' type='text/css'>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles-main-sheet.css" id="theme-styles">
+
+    <!--[if lt IE 9]>      
+        <script src="modules/respond/html5-3.6-respond-1.1.0.min.js"></script>
+    <![endif]-->
+
+    <script src="//code.jquery.com/jquery-2.2.3.min.js"></script>
+    <script>window.jQuery || document.write('<script src="node_modules/jquery/dist/jquery.min.js"><\/script>')</script>
+</head>
+<body>
+    <header>
+        <div class="widewrapper masthead">
+            <div class="container">
+                <a href="home-page.html" id="logo">
+                    Cornerstone 2k16
+                </a>
+
+                <div id="mobile-nav-toggle" class="pull-right">
+                    <a href="#" data-toggle="collapse" data-target=".tales-nav .navbar-collapse">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                </div>
+
+                <nav class="pull-right tales-nav">
+                    <div class="collapse navbar-collapse">
+                        <ul class="nav nav-pills navbar-nav">
+                          
+                            <li>
+                                <a href="recaps-page.html">Recaps</a>
+                            </li>
+                            <li>
+                                <a href="events-page.html">Campus Events</a>
+                            </li>
+                            <li class="active">
+                                <a>Resources</a> <!-- no neeed for link as user is on this page already -->
+                            </li>                        
+                        </ul>
+                    </div>
+                </nav>        
+
+            </div>
+        </div>
+
+        <div class="widewrapper subheader">
+            <div class="container">
+                <div class="tales-breadcrumb">
+                    <a href="#">Resources Page</a>
+                </div>
+
+                <div class="tales-searchbox">
+                    <form action="#" method="get" accept-charset="utf-8">
+                        <button class="searchbutton" type="submit">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        <input class="searchfield" id="searchbox" type="text" placeholder="Search">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+
+        <div class="widewrapper main">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 blog-main">
+                     <article class="blog-post">
+                        <header>
+                            <h1>Resources For You</h1>
+                            <div class="lead-image">
+                                <img src="img/resources-page-image.png" class="img-responsive">
+                                <div class="meta clearfix">
+                      
+                                    <div class="author">
+                                        <i class="fa fa-user"></i>
+                                        <span class="data">Justice Adams</span>
+                                    </div>
+                                    <div class="date">
+                                        <i class="fa fa-calendar"></i>
+                                        <span class="data">4 June 2016</span>
+                                    </div>                        
+                                </div>
+                            </div>
+                        </header>
+                        
+						<!-- This code is ugly, but IMO is the cleanest way to do it is to have each table row span a line as opposed to cascading. -->
+						
+						<div class="body">
+							<table style="width:100%">
+								<tr>
+									<th>Service</th>
+									<th>Phone</th> 
+									<th>Location</th>
+								</tr>
+								<tr> <td><a href="http://www.uni.edu/advising/" target="_blank">Academic Advising</a></td>	 	 				 <td>319-273-3406</td> 		<td><a href=https://www.google.com/maps/place/Gilchrist+Hall,+Dakota+St,+Cedar+Falls,+IA+50614/@42.5125666,-92.4618506,17z/data=!3m1!4b1!4m5!3m4!1s0x87e5555862f732e3:0x6f4c129b88548bfa!8m2!3d42.5125482!4d-92.4596419" target="_blank"> Gilchrist Hall 102</a></td> 	</tr>
+								<tr> <td><a href="http://www.uni.edu/unialc/" target="_blank">Academic Learning Center</a></td>	 				 <td>319-273-6023</td> 		<td><a href=https://www.google.com/maps/place/ITTC+building/@42.5155955,-92.4613988,17z/data=!3m1!4b1!4m5!3m4!1s0x87e55557ed2fa5a3:0xe84c9737e2b8c689!8m2!3d42.5155916!4d-92.4592101" target="_blank"> ITTC 007 &amp; 008</a></td> 										</tr>
+								<tr> <td><a href="http://www.uni.edu/careerservices/" target="_blank">Career Services</a></td>	 				 <td>319-273-6857</td> 		<td><a href=https://www.google.com/maps/place/Gilchrist+Hall,+Dakota+St,+Cedar+Falls,+IA+50614/@42.5125666,-92.4618506,17z/data=!3m1!4b1!4m5!3m4!1s0x87e5555862f732e3:0x6f4c129b88548bfa!8m2!3d42.5125482!4d-92.4596419" target="_blank"> Gilchrist Hall 102</a></td> 	</tr>
+								<tr> <td><a href="https://www.uni.edu/counseling/" target="_blank">Counseling Center</a></td> 					 <td>319-273-2676</td>	    <td><a href=https://www.google.com/maps/place/Student+Health+Center/@42.5166023,-92.4655287,17z/data=!3m1!4b1!4m5!3m4!1s0x87effff9b05758ed:0x20f83c02a59a85f0!8m2!3d42.5165984!4d-92.46334" target="_blank"> Student Health Center 103</a></td> 						</tr>
+								<tr> <td><a href="https://www.uni.edu/deanofstudents/" target="_blank">Dean of Students</a></td> 				 <td>319-273-2332</td>	    <td><a href=https://www.google.com/maps/place/Gilchrist+Hall,+Dakota+St,+Cedar+Falls,+IA+50614/@42.5125666,-92.4618506,17z/data=!3m1!4b1!4m5!3m4!1s0x87e5555862f732e3:0x6f4c129b88548bfa!8m2!3d42.5125482!4d-92.4596419" target="_blank"> Gilchrist Hall 118</a></td> 	</tr>
+								<tr> <td><a href="https://www.uni.edu/dor/" target="_blank">Department of Residence</a></td> 					 <td>319-273-2333</td> 	    <td><a href=https://www.google.com/maps/place/Redeker+Center/@42.5122892,-92.4656453,17z/data=!3m1!4b1!4m5!3m4!1s0x87effff6fb23eedd:0x2f526ebf89e3a5df!8m2!3d42.5122853!4d-92.4634566" target="_blank"> Redeker Center 010</a></td> 									</tr>
+								<tr> <td><a href="https://www.uni.edu/finaid/" target="_blank">Financial Aid &amp; Scholarships<a/></td> 		 <td>319-273-2700</td> 		<td><a href=https://www.google.com/maps/place/Gilchrist+Hall,+Dakota+St,+Cedar+Falls,+IA+50614/@42.5125666,-92.4618506,17z/data=!3m1!4b1!4m5!3m4!1s0x87e5555862f732e3:0x6f4c129b88548bfa!8m2!3d42.5125482!4d-92.4596419" target="_blank"> Gilchrist Hall 105</a></td> 	</tr>
+								<tr> <td><a href="https://www.uni.edu/deanofstudents/lgbt/" target="_blank">LGBT Center</a></td> 				 <td>319-273-5428</td> 		<td><a href=https://www.google.com/maps/place/Maucker+Union/@42.5147018,-92.460065,17.25z/data=!4m5!3m4!1s0x87e555582c94ff59:0x8c962580926bf5f8!8m2!3d42.5147262!4d-92.4582143" target="_blank"> Maucker Union Upper Level</a></td>										</tr>
+								<tr> <td><a href="https://www.uni.edu/military/" target="_blank">Military and Veteran Student Services</a></td>  <td>319-273-3040</td> 	 	<td><a href=https://www.google.com/maps/place/Maucker+Union/@42.5147018,-92.460065,17.25z/data=!4m5!3m4!1s0x87e555582c94ff59:0x8c962580926bf5f8!8m2!3d42.5147262!4d-92.4582143" target="_blank"> Maucker Union Upper Level</a></td>										</tr>
+								<tr> <td><a href="https://www.uni.edu/wellrec/" target="_blank">Recreation Services</a></td> 					 <td>319-273-6275</td> 		<td><a href=https://www.google.com/maps/place/Wellness%2FRecreation+Center/@42.5171986,-92.4686412,17z/data=!3m1!4b1!4m5!3m4!1s0x87effffbb35ce3b5:0x3f6919bfa8789817!8m2!3d42.5171947!4d-92.4664525" target="_blank"> Wellness/Recreation Center 101</a></td>			</tr>
+								<tr> <td><a href="https://www.uni.edu/registrar/" target="_blank">Registrar</a></td> 							 <td>319-273-2241</td> 		<td><a href=https://www.google.com/maps/place/Gilchrist+Hall,+Dakota+St,+Cedar+Falls,+IA+50614/@42.5125666,-92.4618506,17z/data=!3m1!4b1!4m5!3m4!1s0x87e5555862f732e3:0x6f4c129b88548bfa!8m2!3d42.5125482!4d-92.4596419" target="_blank"> Gilchrist Hall 115</a></td>	</tr>
+								<tr> <td><a href="https://www.uni.edu/sds/" target="_blank">Student Disablity Services</a></td> 				 <td>319-273-2677</td> 		<td><a href=https://www.google.com/maps/place/Student+Health+Center/@42.5166023,-92.4655287,17z/data=!3m1!4b1!4m5!3m4!1s0x87effff9b05758ed:0x20f83c02a59a85f0!8m2!3d42.5165984!4d-92.46334" target="_blank"> Student Health Center 103</a></td>							</tr>
+								<tr> <td><a href="https://www.uni.edu/health/" target="_blank">Student Health Clinic</a></td> 					 <td>319-273-2009</td> 		<td><a href=https://www.google.com/maps/place/Student+Health+Center/@42.5166023,-92.4655287,17z/data=!3m1!4b1!4m5!3m4!1s0x87effff9b05758ed:0x20f83c02a59a85f0!8m2!3d42.5165984!4d-92.46334" target="_blank"> Student Health Center 106</a></td>							</tr>
+								<tr> <td><a href="https://www.uni.edu/involvement/" target="_blank">Student Involvement Center</a></td> 		 <td>319-273-2683</td> 		<td><a href=https://www.google.com/maps/place/Maucker+Union/@42.5147018,-92.460065,17.25z/data=!4m5!3m4!1s0x87e555582c94ff59:0x8c962580926bf5f8!8m2!3d42.5147262!4d-92.4582143" target="_blank"> Maucker Union</a></td> 											    </tr>
+								<tr> <td><a href="https://www.uni.edu/wellrec/wellness" target="_blank">Student Wellness Services</a></td> 		 <td>319-273-6199</td> 		<td><a href=https://www.google.com/maps/place/Wellness%2FRecreation+Center/@42.5171986,-92.4686412,17z/data=!3m1!4b1!4m5!3m4!1s0x87effffbb35ce3b5:0x3f6919bfa8789817!8m2!3d42.5171947!4d-92.4664525" target="_blank"> Wellness/Recreation Center 104</a></td>			</tr>
+								<tr> <td><a href="https://www.uni.edu/subabuse/" target="_blank">Student Abuse Services</a></td> 				 <td>319-273-3423</td> 		<td><a href=https://www.google.com/maps/place/Wellness%2FRecreation+Center/@42.5171986,-92.4686412,17z/data=!3m1!4b1!4m5!3m4!1s0x87effffbb35ce3b5:0x3f6919bfa8789817!8m2!3d42.5171947!4d-92.4664525" target="_blank"> Wellness/Recreation Center 104</a></td>			</tr>
+								<tr> <td><a href="https://www.uni.edu/violenceservices/" target="_blank">Violence Intervention Services</a></td> <td>319-273-2137</td> 		<td><a href=https://www.google.com/maps/place/Wellness%2FRecreation+Center/@42.5171986,-92.4686412,17z/data=!3m1!4b1!4m5!3m4!1s0x87effffbb35ce3b5:0x3f6919bfa8789817!8m2!3d42.5171947!4d-92.4664525" target="_blank"> Wellness/Recreation Center 104</a></td>			</tr>
+							</table>
+						</div>
+                    </article>
+                </div>
+				
+                <aside class="col-md-4 blog-aside">
+                    <div class="aside-widget">
+                        <header>
+                            <h3>Website objective</h3>
+                        </header>
+                        <div class="body">
+                            <ul class="tales-list">
+                                <a id="logo">
+									<!--UNI logo-->
+									<img src="img/UNIlogo.png">
+								</a>
+								<p>
+								<br>
+									The purpose of this website is to keep you up to date with what we do in class, 
+									as well as keep you connected with the various elements of first year cornerstone. Go nuts! 
+								</p>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="aside-widget">
+                        <header>
+                            <h3>Tags</h3>
+                        </header>
+                        <div class="body clearfix">
+                            <ul class="tags">
+                                <li><a>Student Life</a></li>
+                                <li><a>Resources</a></li>
+                                <li><a>UNI</a></li>
+                                <li><a>First Year</a></li>                         
+                            </ul>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="widewrapper footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 footer-widget">
+                        <h3> <i class="fa fa-bug" aria-hidden="true"></i>Bugs</h3>
+                        <span>
+							I like to build software, but I occasionally make mistakes. If you encounter any typos, bugs, glitches, or 404's and you know how to replicate them, you should report them! 
+							Shoot me an E-mail, tweet at the class twitter, or tell me in class. I'll reward you with candy.
+						</span>
+                    </div>
+
+                    <div class="col-md-4 footer-widget">
+                        <h3> <i class="fa fa-external-link" aria-hidden="true"></i> Usefull links for you</h3>
+                        <ul class="tales-list">
+                            <li><a href="https://myuniverse.uni.edu">My Universe</a></li>
+                            <li><a href="https://www.uni.edu/">UNI Homepage.</a></li>
+                            <li><a href="https://www.uni.edu/elearning/">E-learning</a></li>
+                            <li><a href="https://www.uni.edu/unicalendar/">UNI calender of today's events</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-4 footer-widget">
+                        <h3> <i class="fa fa-envelope"></i>Contact Us</h3>
+                        <span>Feel free to contact me or nick with any questions/comments you may have! We're here to help.</span>
+                     
+                        <span class="email">
+                            <a href="mailto:adamsjal@uni.edu">E-mail me - adamsjal@uni.edu</a> <br/>  <!--new line between e-mails with br tag-->
+							<a href="mailto:nick.roos@uni.edu">E-mail Nick - nick.roos@uni.edu</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+		
+        <div class="widewrapper copyright">
+            <div class="container">
+                Designed by Justice Adams</a>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="modules/modernizr/modernizr-custom.js"></script>
+</body>
+
+<!-- This is the style for the table being used -->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 15px;
+}
+</style>
+</head>
+<body>
+
+</html>
+
+
+
