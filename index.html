@@ -151,11 +151,11 @@
                         <header>
                             <h3>Keep up with the class on twitter</h3>
                         </header>
-                        <div>
-						<a class="twitter-timeline" href="https://twitter.com/cornerstone2k16" data-widget-id="738933139800608768" data-chrome="noheader">Tweets by @cornerstone2k16</a> <!--embedded twitter feed !--> 
-						<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id))
-						{js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}
-						(document,"script","twitter-wjs");</script>
+                        <div class="mobileHide">
+							<a class="twitter-timeline" href="https://twitter.com/cornerstone2k16" data-widget-id="738933139800608768" data-chrome="noheader">Tweets by @cornerstone2k16</a> <!--embedded twitter feed !--> 
+							<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id))
+							{js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}
+							(document,"script","twitter-wjs");</script>
                         </div>
                     </div>
 					
@@ -206,6 +206,14 @@
             </div>
         </div>
     </footer>
+
+	<!-- Style for hiding twitter updates for mobile user !-->
+	<style type="text/css">
+	   .mobileHide { display: inline;}
+	   @media only screen
+	   and (min-device-width : 320px)
+	   and (max-device-width : 480px){  .mobileHide { display: none;}}
+	</style>
 
     
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
