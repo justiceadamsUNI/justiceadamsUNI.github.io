@@ -1,8 +1,9 @@
 # Cornerstone2k16 class website developed by Justice Adams
 
-The purpose of this website is to keep you the students in my first year cornerstone class up to date with what we do in class, as well as keep them connected with the various elements of the first year college experience. Feel free to report bugs here using issues or email me at adamsjal@uni.edu
+The purpose of this website is to keep the students in my first year cornerstone class up to date with what they do in class, as well as keep them connected with the various elements of the first year college experience. Feel free to report bugs here using issues or email me at adamsjal@uni.edu
 
 [cornerstone2k16.com](https://justiceadamsuni.github.io/index.html)
+![website mock page](https://raw.githubusercontent.com/justiceadamsUNI/justiceadamsUNI.github.io/master/img/read-me-screenshot.png)
 
 Tools Used
 ----------
