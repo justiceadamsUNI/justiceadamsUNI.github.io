@@ -84,7 +84,7 @@ def replaceDirectoryStructure(html):
             .replace(href_cssFolder, href_cssFolder.replace("css", "../css"))
             .replace(href_imageFolder, href_imageFolder.replace("img", "../img"))
             .replace(href_modulesFolder, href_modulesFolder.replace("modules", "../modules"))
-            .replace(href_indexFile, href_indexFile.replace("index", "../css"))
+            .replace(href_indexFile, href_indexFile.replace("index", "../index"))
             .replace(href_recapsPageFile, href_recapsPageFile.replace("recaps-page", "../recaps-page"))
             .replace(href_eventsPageFile, href_eventsPageFile.replace("events-page", "../events-page"))
             .replace(href_resourcesPageFile, href_resourcesPageFile.replace("resources-page", "../resources-page"))

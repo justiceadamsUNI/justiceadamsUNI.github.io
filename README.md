@@ -22,3 +22,5 @@ Tools Used
 - [GoDaddy](https://www.godaddy.com/): Domain purchasing company. Used to purchase and control www.cornerstone2k16.com
 
 - [GitHub Pages](https://pages.github.com/): File hosting service run by GitHub which allows anyone to host sites directly from a GitHub repository.
+
+- [Photoshop](https://www.adobe.com/products/photoshop.html): The world’s best imaging and design app .Used to create images for site 

@@ -144,7 +144,7 @@ def saveUpdatedFile(html, blogInfo):
         
         parentDirectory = '/../html_bucket_other_posts/'
     
-    filename = blogInfo.title.replace(" ", "-") + ".html"
+    filename = blogInfo.title.replace(" ", "-").lower() + ".html"
     filename = parentDirectory + filename
     outFile = open(os.path.dirname(__file__) + filename, "w")
     outFile.write(html)
