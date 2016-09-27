@@ -66,6 +66,7 @@ def replaceDirectoryStructure(html):
     href_html_bucket_class_recaps = "href=\"html_bucket_class_recaps"
     href_html_bucket_other_posts = "href=\"html_bucket_other_posts"
     href_html_bucket_indexed_homepages = "href=\"html_bucket_indexed_homepages"
+    href_pdf_folder = "href=\"pdf"
 
     src_nodeModulesFolder = "src=\"node_modules/"
     src_cssFolder = "src=\"css/"
@@ -78,6 +79,7 @@ def replaceDirectoryStructure(html):
     src_html_bucket_class_recaps = "src=\"html_bucket_class_recaps"
     src_html_bucket_other_posts = "src=\"html_bucket_other_posts"
     src_html_bucket_indexed_homepages = "src=\"html_bucket_indexed_homepages"
+    src_pdf_folder = "src=\"pdf"
 
 
     html = (html.replace(href_nodeModulesFolder, href_nodeModulesFolder.replace("node_modules","../node_modules"))
@@ -90,7 +92,9 @@ def replaceDirectoryStructure(html):
             .replace(href_resourcesPageFile, href_resourcesPageFile.replace("resources-page", "../resources-page"))
             .replace(href_html_bucket_class_recaps, href_html_bucket_class_recaps.replace("html_bucket_class_recaps", "../html_bucket_class_recaps"))
             .replace(href_html_bucket_other_posts, href_html_bucket_other_posts.replace("html_bucket_other_posts", "../html_bucket_other_posts"))
-            .replace(href_html_bucket_indexed_homepages, href_html_bucket_indexed_homepages.replace("html_bucket_indexed_homepages", "../html_bucket_indexed_homepages")))
+            .replace(href_html_bucket_indexed_homepages, href_html_bucket_indexed_homepages.replace("html_bucket_indexed_homepages", "../html_bucket_indexed_homepages"))
+            .replace(href_pdf_folder, href_pdf_folder.replace("pdf", "../pdf")))
+    
 
     html = (html.replace(src_nodeModulesFolder, src_nodeModulesFolder.replace("node_modules","../node_modules"))
             .replace(src_cssFolder, src_cssFolder.replace("css", "../css"))
@@ -102,7 +106,8 @@ def replaceDirectoryStructure(html):
             .replace(src_resourcesPageFile, src_resourcesPageFile.replace("resources-page", "../resources-page"))
             .replace(src_html_bucket_class_recaps, src_html_bucket_class_recaps.replace("html_bucket_class_recaps", "../html_bucket_class_recaps"))
             .replace(src_html_bucket_other_posts, src_html_bucket_other_posts.replace("html_bucket_other_posts", "../html_bucket_other_posts"))
-            .replace(src_html_bucket_indexed_homepages, src_html_bucket_indexed_homepages.replace("html_bucket_indexed_homepages", "../html_bucket_indexed_homepages")))
+            .replace(src_html_bucket_indexed_homepages, src_html_bucket_indexed_homepages.replace("html_bucket_indexed_homepages", "../html_bucket_indexed_homepages"))
+            .replace(src_pdf_folder, src_pdf_folder.replace("pdf", "../pdf")))
         
     return html
 
