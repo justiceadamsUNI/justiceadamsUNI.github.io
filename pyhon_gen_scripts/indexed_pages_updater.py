@@ -11,7 +11,7 @@ import re
 
 def promptForFileToUpdate():
     print(" This script will update an index file to work properly once it's outside the parent directory.")
-    print(" All you must do is tell us which file to update. And what to link it to.")
+    print(" All you must do is tell us which file to update.")
     print(" * Please note this script assumes 4 post teasers per index page *")
     input("\n Press Enter to start, or stop script with CNTRL+C: ")
 
@@ -55,7 +55,7 @@ def updateHtmlFromFile(indexFile, index):
 
 
 def replaceDirectoryStructure(html):
-    href_nodeModulesFolder = "href=\"node_modules/"
+    href_nodeModulesFolder = "href=\"node-modules/"
     href_cssFolder = "href=\"css/"
     href_imageFolder = "href=\"img/"
     href_modulesFolder = "href=\"modules/"
@@ -68,7 +68,7 @@ def replaceDirectoryStructure(html):
     href_html_bucket_indexed_homepages = "href=\"html_bucket_indexed_homepages"
     href_pdf_folder = "href=\"pdf"
 
-    src_nodeModulesFolder = "src=\"node_modules/"
+    src_nodeModulesFolder = "src=\"node-modules/"
     src_cssFolder = "src=\"css/"
     src_imageFolder = "src=\"img/"
     src_modulesFolder = "src=\"modules/"
@@ -82,7 +82,7 @@ def replaceDirectoryStructure(html):
     src_pdf_folder = "src=\"pdf"
 
 
-    html = (html.replace(href_nodeModulesFolder, href_nodeModulesFolder.replace("node_modules","../node_modules"))
+    html = (html.replace(href_nodeModulesFolder, href_nodeModulesFolder.replace("node-modules","../node-modules"))
             .replace(href_cssFolder, href_cssFolder.replace("css", "../css"))
             .replace(href_imageFolder, href_imageFolder.replace("img", "../img"))
             .replace(href_modulesFolder, href_modulesFolder.replace("modules", "../modules"))
@@ -96,7 +96,7 @@ def replaceDirectoryStructure(html):
             .replace(href_pdf_folder, href_pdf_folder.replace("pdf", "../pdf")))
     
 
-    html = (html.replace(src_nodeModulesFolder, src_nodeModulesFolder.replace("node_modules","../node_modules"))
+    html = (html.replace(src_nodeModulesFolder, src_nodeModulesFolder.replace("node-modules", "../node-modules"))
             .replace(src_cssFolder, src_cssFolder.replace("css", "../css"))
             .replace(src_imageFolder, src_imageFolder.replace("img", "../img"))
             .replace(src_modulesFolder, src_modulesFolder.replace("modules", "../modules"))
@@ -113,18 +113,19 @@ def replaceDirectoryStructure(html):
 
 
 def updateNavigationButtons(html, index):
-    olderPostsPath = os.path.dirname(__file__) + "/../html_bucket_indexed_homepages/index-posts-" + str(index-4) + "-" + str(index-1) + ".html"
+    olderIndexFile = "/../html_bucket_indexed_homepages/index-posts-" + str(index-4) + "-" + str(index-1) + ".html"
+    olderInexPath = os.path.dirname(__file__) + olderIndexFile
 
-    if os.path.isfile(olderPostsPath) and os.access(olderPostsPath, os.R_OK):
+    if os.path.isfile(olderInexPath) and os.access(olderInexPath, os.R_OK):
         #Setup both older and newer nav button
         
         navSetup = (
             " <!-- NAV-BUTTON-FLAG --> \n" +
             " <div class=\"paging\">" +
-            " <a href=\"..\index.html\" class=\"newer\"><i class=\"fa fa-long-arrow-left\">" +
+            " <a href=\"../index.html\" class=\"newer\"><i class=\"fa fa-long-arrow-left\">" +
             " </i> Newer</a>" + 
             " <span>&bull;</span> " +
-            " <a href=\"" + olderPostsPath + "\" class=\"older\">Older <i class=\"fa fa-long-arrow-right\"></i></a>" + 
+            " <a href=\"" + olderIndexFile + "\" class=\"older\">Older <i class=\"fa fa-long-arrow-right\"></i></a>" + 
             " </div>"
             " \n <!-- NAV-BUTTON-FLAG -->")
     else:
@@ -133,7 +134,7 @@ def updateNavigationButtons(html, index):
         navSetup = (
             " <!-- NAV-BUTTON-FLAG --> \n" +
             " <div class=\"paging\">" +
-            " <a href=\"..\index.html\" class=\"newer\"><i class=\"fa fa-long-arrow-left\">" +
+            " <a href=\"../index.html\" class=\"newer\"><i class=\"fa fa-long-arrow-left\">" +
             " </i> Newer</a>" +
             " </div>"
             " \n <!-- NAV-BUTTON-FLAG -->")
@@ -142,33 +143,39 @@ def updateNavigationButtons(html, index):
         
 
 def saveUpdatedFile(html, index):
-    newFilePath = os.path.dirname(__file__) + "/../html_bucket_indexed_homepages/index-posts-" + str(index) + "-" + str(index + 3) + ".html"
+    newFile = "../html_bucket_indexed_homepages/index-posts-" + str(index) + "-" + str(index + 3) + ".html"
+    newFilePath = os.path.dirname(__file__) + "/" + newFile
 
     file = open(newFilePath, "w")
     file.write(html)
     file.close()
 
-    return newFilePath
+    return newFile
 
 
-def updateOlderPostsNavButtons(currentFilePath, index):
-    previousPostsPagePath = os.path.dirname(__file__) + "/../html_bucket_indexed_homepages/index-posts-" + str(index-4) + "-" + str(index-1) + ".html"
+def updateOlderPostsNavButtons(newIndexFile, index):
+    previousIndexPagePath = os.path.dirname(__file__) + "/../html_bucket_indexed_homepages/index-posts-" + str(index-4) + "-" + str(index-1) + ".html"
 
-    if os.path.isfile(previousPostsPagePath) and os.access(previousPostsPagePath, os.R_OK):
-        previousPostsPage = open(previousPostsPagePath, "r");
-        previousPostsPageHtml = previousPostsPage.read()
-        previousPostsPage.close()
+    if os.path.isfile(previousIndexPagePath) and os.access(previousIndexPagePath, os.R_OK):
+        print("true")
+        previousIndexPage = open(previousIndexPagePath , "r");
+        previousIndexPageHtml =  previousIndexPage.read()
+        previousIndexPage.close()
 
-        updatedHtml = previousPostsPageHtml.replace(
-            "<a href=\"..\index.html\" class=\"newer\">",
-            "<a href=\"" + currentFilePath + "\" class=\"newer\">")
+        updatedHtml = previousIndexPageHtml.replace(
+            "<a href=\"../index.html\" class=\"newer\">",
+            "<a href=\"" + newIndexFile + "\" class=\"newer\">")
 
-        updatedPage = open(previousPostsPagePath, "w")
+        updatedPage = open(previousIndexPagePath, "w")
         updatedPage.write(updatedHtml)
         updatedPage.close()
+        print(newIndexFile)
+    else:
+        print("false - " + previousIndexPagePath)
 
 
 def reviewPost(filename):
+    filename = os.path.dirname(__file__) + "/" + filename
     print("\n *Remember to remove old file from folder. It is not done manually here for safety purposes*")
     print("  -- Script Over. Opening File for review...")
     time.sleep(.5)
