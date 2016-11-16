@@ -113,7 +113,7 @@ def replaceDirectoryStructure(html):
 
 
 def updateNavigationButtons(html, index):
-    olderIndexFile = "/../html_bucket_indexed_homepages/index-posts-" + str(index-4) + "-" + str(index-1) + ".html"
+    olderIndexFile = "../html_bucket_indexed_homepages/index-posts-" + str(index-4) + "-" + str(index-1) + ".html"
     olderInexPath = os.path.dirname(__file__) + olderIndexFile
 
     if os.path.isfile(olderInexPath) and os.access(olderInexPath, os.R_OK):
@@ -154,10 +154,9 @@ def saveUpdatedFile(html, index):
 
 
 def updateOlderPostsNavButtons(newIndexFile, index):
-    previousIndexPagePath = os.path.dirname(__file__) + "/../html_bucket_indexed_homepages/index-posts-" + str(index-4) + "-" + str(index-1) + ".html"
+    previousIndexPagePath = os.path.dirname(__file__) + "../html_bucket_indexed_homepages/index-posts-" + str(index-4) + "-" + str(index-1) + ".html"
 
     if os.path.isfile(previousIndexPagePath) and os.access(previousIndexPagePath, os.R_OK):
-        print("true")
         previousIndexPage = open(previousIndexPagePath , "r");
         previousIndexPageHtml =  previousIndexPage.read()
         previousIndexPage.close()
@@ -169,9 +168,6 @@ def updateOlderPostsNavButtons(newIndexFile, index):
         updatedPage = open(previousIndexPagePath, "w")
         updatedPage.write(updatedHtml)
         updatedPage.close()
-        print(newIndexFile)
-    else:
-        print("false - " + previousIndexPagePath)
 
 
 def reviewPost(filename):
