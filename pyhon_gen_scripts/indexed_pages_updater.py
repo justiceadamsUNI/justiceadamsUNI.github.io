@@ -9,6 +9,8 @@ import webbrowser
 import time
 import re
 
+SCRIPT_PATH = os.path.dirname(os.path.abspath(__file__))
+
 def promptForFileToUpdate():
     print(" This script will update an index file to work properly once it's outside the parent directory.")
     print(" All you must do is tell us which file to update.")
@@ -19,7 +21,7 @@ def promptForFileToUpdate():
 
 
 def getIndexFile(message):
-    indexPagesFolder = os.path.dirname(__file__) + "/../html_bucket_indexed_homepages/"
+    indexPagesFolder = SCRIPT_PATH + "/../html_bucket_indexed_homepages/"
 
     while(True):
         indexFile = input(message)
@@ -29,6 +31,7 @@ def getIndexFile(message):
         else:
            print(" Not a valid file. Try again.")
            print("\n All files in folder: \n")
+           print(indexPagesFolder)
            print(os.listdir(indexPagesFolder))
 
 
@@ -113,38 +116,38 @@ def replaceDirectoryStructure(html):
 
 
 def updateNavigationButtons(html, index):
-    olderIndexFile = "../html_bucket_indexed_homepages/index-posts-" + str(index-4) + "-" + str(index-1) + ".html"
-    olderInexPath = os.path.dirname(__file__) + olderIndexFile
+    olderIndexFile = "/../html_bucket_indexed_homepages/index-posts-" + str(index-4) + "-" + str(index-1) + ".html"
+    olderInexPath = SCRIPT_PATH + olderIndexFile
 
     if os.path.isfile(olderInexPath) and os.access(olderInexPath, os.R_OK):
-        #Setup both older and newer nav button
+        #Setup both older and newer nav buttons
         
         navSetup = (
-            " <!-- NAV-BUTTON-FLAG --> \n" +
+            " <!-- NAV-BUTTON-FLAG --> " +
             " <div class=\"paging\">" +
             " <a href=\"../index.html\" class=\"newer\"><i class=\"fa fa-long-arrow-left\">" +
             " </i> Newer</a>" + 
             " <span>&bull;</span> " +
-            " <a href=\"" + olderIndexFile + "\" class=\"older\">Older <i class=\"fa fa-long-arrow-right\"></i></a>" + 
-            " </div>"
-            " \n <!-- NAV-BUTTON-FLAG -->")
+            " <a href=\"" + olderIndexFile[1:] + "\" class=\"older\">Older <i class=\"fa fa-long-arrow-right\"></i></a>" + 
+            " </div>" +
+            " <!-- NAV-BUTTON-FLAG -->")
     else:
         ##Only need newer nav button
         
         navSetup = (
-            " <!-- NAV-BUTTON-FLAG --> \n" +
+            " <!-- NAV-BUTTON-FLAG --> " +
             " <div class=\"paging\">" +
             " <a href=\"../index.html\" class=\"newer\"><i class=\"fa fa-long-arrow-left\">" +
             " </i> Newer</a>" +
             " </div>"
-            " \n <!-- NAV-BUTTON-FLAG -->")
+            " <!-- NAV-BUTTON-FLAG -->")
         
     return re.sub("<!-- NAV-BUTTON-FLAG -->.*?<!-- NAV-BUTTON-FLAG -->", navSetup, html, flags=re.DOTALL)
         
 
 def saveUpdatedFile(html, index):
-    newFile = "../html_bucket_indexed_homepages/index-posts-" + str(index) + "-" + str(index + 3) + ".html"
-    newFilePath = os.path.dirname(__file__) + "/" + newFile
+    newFile = "/../html_bucket_indexed_homepages/index-posts-" + str(index) + "-" + str(index + 3) + ".html"
+    newFilePath = SCRIPT_PATH + newFile
 
     file = open(newFilePath, "w")
     file.write(html)
@@ -154,7 +157,7 @@ def saveUpdatedFile(html, index):
 
 
 def updateOlderPostsNavButtons(newIndexFile, index):
-    previousIndexPagePath = os.path.dirname(__file__) + "../html_bucket_indexed_homepages/index-posts-" + str(index-4) + "-" + str(index-1) + ".html"
+    previousIndexPagePath = SCRIPT_PATH + "/../html_bucket_indexed_homepages/index-posts-" + str(index-4) + "-" + str(index-1) + ".html"
 
     if os.path.isfile(previousIndexPagePath) and os.access(previousIndexPagePath, os.R_OK):
         previousIndexPage = open(previousIndexPagePath , "r");
@@ -163,15 +166,30 @@ def updateOlderPostsNavButtons(newIndexFile, index):
 
         updatedHtml = previousIndexPageHtml.replace(
             "<a href=\"../index.html\" class=\"newer\">",
-            "<a href=\"" + newIndexFile + "\" class=\"newer\">")
+            "<a href=\"" + newIndexFile[1:] + "\" class=\"newer\">")
 
         updatedPage = open(previousIndexPagePath, "w")
         updatedPage.write(updatedHtml)
         updatedPage.close()
 
+def updateMainIndexFileNavButtons(index):
+    indexPath = SCRIPT_PATH + "/../index.html"
+
+    if os.path.isfile(indexPath) and os.access(indexPath, os.R_OK):
+        indexPage = open(indexPath , "r");
+        indexPageHtml =  indexPage.read()
+        indexPage.close()
+
+        updatedHtml = indexPageHtml.replace(str(index-4) + "-" + str(index-1),
+                                            str(index) + "-" + str(index+3))
+
+        updatedPage = open(indexPath, "w")
+        updatedPage.write(updatedHtml)
+        updatedPage.close()
+
 
 def reviewPost(filename):
-    filename = os.path.dirname(__file__) + "/" + filename
+    filename = SCRIPT_PATH + filename
     print("\n *Remember to remove old file from folder. It is not done manually here for safety purposes*")
     print("  -- Script Over. Opening File for review...")
     time.sleep(.5)
@@ -183,4 +201,5 @@ index = promptForValidNumber("\n What is the starting index. (This assumes there
 updatedHtml = updateHtmlFromFile(indexFile, index)
 updatedFile = saveUpdatedFile(updatedHtml, index)
 updateOlderPostsNavButtons(updatedFile, index)
+updateMainIndexFileNavButtons(index)
 reviewPost(updatedFile)
