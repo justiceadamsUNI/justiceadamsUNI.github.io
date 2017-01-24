@@ -28,7 +28,7 @@ def promptForBlogInfo():
     shouldEmbeddMedia = promptForValidBoolean(" Do you want to embedd a youtube video/gif/image?")
 
     if(shouldEmbeddMedia):
-        mediaIsYoutube = promptForValidBoolean(" Is it a youTubeVideo?")
+        mediaIsYoutube = promptForValidBoolean(" Is it a youTube video?")
         if (mediaIsYoutube):
             mediaHtml = input("\n YouTube embedd code: ")
             mediaHtml = wrapYoutubeVideo(mediaHtml)
