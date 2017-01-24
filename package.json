@@ -1,12 +1,12 @@
 {
-  "name": "Tales",
-  "version": "3.3.6-v3",
-  "description": "A blog theme for Bootstrap",
+  "name": "Cornerstone 2k16",
+  "version": "1",
+  "description": "A static site for cornerstone 2k16 class",
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "HackerThemes",
+  "author": "Justice Adams",
   "license": "http://support.wrapbootstrap.com/knowledge_base/topics/usage-licenses",
   "dependencies": {
     "font-awesome": "4.6.1",
