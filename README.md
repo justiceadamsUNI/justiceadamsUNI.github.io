@@ -3,7 +3,7 @@
 The purpose of this website is to keep the students in my first year cornerstone class up to date with what they do in class, as well as keep them connected with the various elements of the first year college experience. Feel free to report bugs here using issues or email me at adamsjal@uni.edu
 
 [cornerstone2k16.com](https://justiceadamsuni.github.io/index.html)
-![website mock page](https://raw.githubusercontent.com/justiceadamsUNI/justiceadamsUNI.github.io/master/img/read-me-screenshot.png)
+![website screenshot](http://i.imgur.com/7MA901T.png)
 
 Tools Used
 ----------
@@ -23,4 +23,4 @@ Tools Used
 
 - [GitHub Pages](https://pages.github.com/): File hosting service run by GitHub which allows anyone to host sites directly from a GitHub repository.
 
-- [Photoshop](https://www.adobe.com/products/photoshop.html): The world’s best imaging and design app .Used to create images for site 
+- [Photoshop](https://www.adobe.com/products/photoshop.html): The worldâ€™s best imaging and design app .Used to create images for site 
