@@ -10,7 +10,7 @@
   "license": "http://support.wrapbootstrap.com/knowledge_base/topics/usage-licenses",
   "dependencies": {
     "font-awesome": "4.6.1",
-    "jquery": "2.2.3",
+    "jquery": "3.0.0",
     "bootstrap": "3.3.6"
   }
 }
